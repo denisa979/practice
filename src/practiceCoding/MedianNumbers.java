@@ -1,5 +1,7 @@
 package practiceCoding;
 
+import java.util.Arrays;
+
 public class MedianNumbers {
   
     public static void main(String[] args) {
