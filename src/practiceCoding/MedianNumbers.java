@@ -1,7 +1,33 @@
 package practiceCoding;
 
 public class MedianNumbers {
+  
+    public static void main(String[] args) {
+
+        int [] arr = {-1, 5, 13, 8, 2, 3, 3, 1};
+        int k = 4;
+        String output= findMedian(arr, k);
+        System.out.println("output = " + output);
+    }
+
+    private static String findMedian(int[] arr, int k) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i <= arr.length -k; i++) {
+            int [] window= Arrays.copyOfRange(arr, i, i +k);
+            Arrays.sort(window);
+
+        double median;
+        if(k%2==0){
+            median= (window [k / 2-1] +window [k/2])/2.0;
+            }else {
+            median =window[k/2];
+        }
+        result.append(median).append(" ");
+    }
+        return result.toString().trim();
+    }
 }
+
 /*
 Median of sliding window in an array
 Given an array of integer arr[] and an integer k, the task is to find the median of each window of size k
